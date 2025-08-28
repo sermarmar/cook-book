@@ -4,11 +4,12 @@ interface ButtonProps {
     children: string;
     className?: string;
     color?: 'primary' | 'secondary' | 'success' | 'danger';
+    circle?: boolean;
     onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, className = '', color = 'primary', onClick }) => {
-    let baseClasses = 'px-4 py-2 rounded hover:transition';
+export const Button: React.FC<ButtonProps> = ({ children, className = '', color = 'primary', circle = false, onClick }) => {
+    let baseClasses = 'px-4 py-2 rounded-8px hover:transition';
     switch (color) {
         case 'primary':
             baseClasses += ' bg-blaze-orange-600 hover:bg-blaze-orange-700 text-white';
@@ -22,6 +23,9 @@ export const Button: React.FC<ButtonProps> = ({ children, className = '', color 
         case 'danger':
             baseClasses += ' bg-mexican-red-600 hover:bg-mexican-red-700 text-white';
             break;
+    }
+    if (circle) {
+        baseClasses += ' rounded-full aspect-square flex items-center justify-center p-0';
     }
     return (
         <button

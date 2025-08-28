@@ -54,4 +54,8 @@
     --color-mexican-red-900: #742828;
     --color-mexican-red-950: #3e1111;
 
+    --radius-3px: 0.1875rem;
+    --radius-8px: 0.5rem;
+    --radius-10px: 0.625rem;
+
 }

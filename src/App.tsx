@@ -11,6 +11,7 @@ function App() {
         <Button color='secondary' onClick={() => alert('Button clicked!')}>Pulsame</Button>
         <Button color='success' onClick={() => alert('Button clicked!')}>Pulsame</Button>
         <Button color='danger' onClick={() => alert('Button clicked!')}>Pulsame</Button>
+        <Button color='danger' circle onClick={() => alert('Button clicked!')}>X</Button>
       </div>
     </>
   )
