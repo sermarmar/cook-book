@@ -5,10 +5,11 @@ interface ButtonProps {
     className?: string;
     color?: 'primary' | 'secondary' | 'success' | 'danger';
     circle?: boolean;
+    disabled?: boolean;
     onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, className = '', color = 'primary', circle = false, onClick }) => {
+export const Button: React.FC<ButtonProps> = ({ children, className = '', color = 'primary', circle = false, disabled = false, onClick }) => {
     let baseClasses = 'px-4 py-2 rounded-8px hover:transition';
     switch (color) {
         case 'primary':
@@ -26,6 +27,9 @@ export const Button: React.FC<ButtonProps> = ({ children, className = '', color 
     }
     if (circle) {
         baseClasses += ' rounded-full aspect-square flex items-center justify-center p-0';
+    }
+    if (disabled) {
+        baseClasses += ' opacity-50 cursor-not-allowed';
     }
     return (
         <button

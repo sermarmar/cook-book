@@ -1,5 +1,6 @@
 import './App.css'
 import { Button } from './components/Button';
+import { Input } from './components/Input';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Button color='success' onClick={() => alert('Button clicked!')}>Pulsame</Button>
         <Button color='danger' onClick={() => alert('Button clicked!')}>Pulsame</Button>
         <Button color='danger' circle onClick={() => alert('Button clicked!')}>X</Button>
+        <Input type='text' placeholder='Escribe' onChange={value => console.log(value)} />
       </div>
     </>
   )
