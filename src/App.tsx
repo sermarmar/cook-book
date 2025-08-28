@@ -1,5 +1,6 @@
 import './App.css'
 import { Button } from './components/Button';
+import { ComboSelect } from './components/ComboSelect';
 import { Input } from './components/Input';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Button color='danger' onClick={() => alert('Button clicked!')}>Pulsame</Button>
         <Button color='danger' circle onClick={() => alert('Button clicked!')}>X</Button>
         <Input type='text' placeholder='Escribe' onChange={value => console.log(value)} />
+        <ComboSelect list={['Option 1', 'Option 2', 'Option 3']} onSelect={value => console.log(value)} />
       </div>
     </>
   )

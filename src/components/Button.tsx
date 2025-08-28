@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ButtonProps {
-    children: string;
+    children: React.ReactNode;
     className?: string;
     color?: 'primary' | 'secondary' | 'success' | 'danger';
     circle?: boolean;
