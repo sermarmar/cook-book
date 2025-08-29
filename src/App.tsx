@@ -1,9 +1,6 @@
 import './App.css'
 import { Button } from './components/Button';
-import { Card } from './components/card/Card';
-import { CardDecription } from './components/card/CardDescription';
-import { CardImage } from './components/card/CardImage';
-import { CardTitle } from './components/card/CardTitle';
+import { Card, CardDecription, CardImage, CardTitle } from './components/card/Card';
 import { ComboSelect } from './components/ComboSelect';
 import { Input } from './components/Input';
 
