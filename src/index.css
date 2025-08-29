@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'BerlinSans';
+  src: url('/fonts/berlin.regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BerlinSansItalic';
+  src: url('/fonts/berlin.italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BerlinSansBold';
+  src: url('/fonts/berlin.bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BerlinSansXBold';
+  src: url('/fonts/berlin.x-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
 
     /* Blaze Orange */
@@ -16,17 +48,17 @@
     --color-primary-950: #461704;
 
     /* Yellow */
-    --color-secondary-50: #fbffe7;
-    --color-secondary-100: #f3ffc1;
-    --color-secondary-200: #ecff86;
-    --color-secondary-300: #e9ff41;
-    --color-secondary-400: #eeff0d;
-    --color-secondary-500: #fbff00;
-    --color-secondary-600: #d1c200;
-    --color-secondary-700: #a68d02;
-    --color-secondary-800: #896e0a;
-    --color-secondary-900: #74590f;
-    --color-secondary-950: #443104;
+    --color-secondary-50: #fefff5;
+    --color-secondary-100: #f9fec7;
+    --color-secondary-200: #f2fd8a;
+    --color-secondary-300: #f1fc4d;
+    --color-secondary-400: #f7fb24;
+    --color-secondary-500: #f5e40b;
+    --color-secondary-600: #d9b606;
+    --color-secondary-700: #b48609;
+    --color-secondary-800: #92680e;
+    --color-secondary-900: #78550f;
+    --color-secondary-950: #452e03;
 
     /* Lima */
     --color-success-50: #f0faeb;
@@ -54,6 +86,26 @@
     --color-danger-900: #742828;
     --color-danger-950: #3e1111;
 
+    /* Fantasy */
+    --color-base-50: #faf7f6;
+    --color-base-100: #f5eeeb;
+    --color-base-200: #ede0db;
+    --color-base-300: #e0cac1;
+    --color-base-400: #cdab9c;
+    --color-base-500: #b88d7b;
+    --color-base-600: #a27460;
+    --color-base-700: #875f4e;
+    --color-base-800: #715143;
+    --color-base-900: #60473c;
+    --color-base-950: #32231d;
+
+    /* Font Style */
+    --font-berlin: 'BerlinSans', sans-serif;
+    --font-berlin-italic: 'BerlinSansItalic', sans-serif;
+    --font-berlin-bold: 'BerlinSansBold', sans-serif;
+    --font-berlin-xbold: 'BerlinSansXBold', sans-serif;
+
+    /* Radius */
     --radius-3px: 0.1875rem;
     --radius-8px: 0.5rem;
     --radius-10px: 0.625rem;
@@ -61,12 +113,26 @@
     --radius-20px: 1.25rem;
     --radius-25px: 1.5625rem;
 
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--color-blaze-orange-50);
-    color: #333;
+    font-family: var(--font-berlin);
+    background-color: var(--color-base-50);
+    color: var(--color-base-950);
     margin: 0;
     padding: 0;
+    /* Efecto de ruido sutil */
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image:
+        linear-gradient(135deg, var(--color-base-50) 0%, var(--color-base-200) 50%, var(--color-base-400) 100%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' fill='none'><g filter='url(%23noise)'><rect width='200' height='200' fill='white' opacity='0.07'/></g><defs><filter id='noise'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/></filter></defs><g opacity='0.15'><rect x='-100' y='100' width='400' height='4' fill='black' transform='rotate(-45 0 200)'/></g></svg>");
+    background-size: cover, 200px 200px;
+    background-repeat: no-repeat, repeat;
 }
