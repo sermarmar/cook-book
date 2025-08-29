@@ -4,5 +4,5 @@ interface CardTitleProps {
 }
 
 export const CardTitle: React.FC<CardTitleProps> = ({ children }) => {
-    return <h2 className="text-2xl font-bold mb-4">{ children }</h2>;
+    return <h2 className="text-2xl font-berlin-bold mb-4 mx-4 text-left">{ children }</h2>;
 }

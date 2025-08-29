@@ -3,5 +3,5 @@ interface CardDescriptionProps {
 }
 
 export const CardDecription: React.FC<CardDescriptionProps> = ({ children }) => {
-    return <p className="text-gray-700">{ children }</p>;
+    return <p className="mx-4 text-base-900 text-left">{ children }</p>;
 }
