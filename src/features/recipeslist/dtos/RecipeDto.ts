@@ -1,4 +1,4 @@
-export interface Food {
+export interface RecipeDto {
     id: string;
     title: string;
     category: string;

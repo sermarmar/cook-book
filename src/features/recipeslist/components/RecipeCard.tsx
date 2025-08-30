@@ -1,5 +1,6 @@
 import { Bagde } from "../../../components/Badge";
-import { Card, CardDecription, CardImage, CardTitle } from "../../../components/card/Card";
+import { Card, CardImage, CardTitle, CardDecription } from '../../../components/Card';
+
 
 interface FoodCardProps {
     src?: string;
