@@ -8,6 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+    ,
+    "dev:local": "cp .env.local .env && vite",
+    "dev:prod": "cp .env.production .env && vite"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
