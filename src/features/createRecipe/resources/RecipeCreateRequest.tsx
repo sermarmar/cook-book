@@ -1,11 +1,11 @@
-export interface Recipe {
-    id: string;
+export interface RecipeCreateRequest {
     title: string;
-    categoryId: string;
+    category: string;
     description: string;
     imageUrl?: string;
     ingredients: string[];
+    instructions: string;
     prepTime: number;
     servings?: number;
-    difficultyId: number;
+    difficult?: number;
 }

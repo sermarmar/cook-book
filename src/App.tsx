@@ -1,5 +1,6 @@
 import './App.css'
 import { Navbar } from './components/Navbar';
+import { RecipeForm } from './features/createRecipe/components/RecipeForm';
 import { RecipesList } from './features/recipeslist/RecipesList';
 
 function App() {
@@ -11,6 +12,10 @@ function App() {
       
         <div>
           <RecipesList />
+        </div>
+
+        <div>
+          <RecipeForm />
         </div>
         
       </div>

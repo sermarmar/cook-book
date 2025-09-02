@@ -1,6 +1,6 @@
-import type { Recipe } from "../../../core/models/Recipe";
-import { RecipeApi } from "../../../infraestructure/api/RecipeApi";
-import type { RecipeDto } from "../dtos/RecipeDto";
+import type { Recipe } from "../models/Recipe";
+import { RecipeApi } from "../../infraestructure/api/RecipeApi";
+import type { RecipeDto } from "../../infraestructure/dtos/RecipeDto";
 
 export const RecipeService = {
     
@@ -12,7 +12,7 @@ export const RecipeService = {
             return recipes.map((recipe: Recipe) => ({
                 id: recipe.id,
                 title: recipe.title,
-                category: recipe.category,
+                category: recipe.categoryId,
                 description: recipe.description,
             })) as RecipeDto[];
         } catch (error) {
