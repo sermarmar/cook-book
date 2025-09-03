@@ -7,7 +7,7 @@ export const SelectCategory: React.FC = () => {
     const [categories, setCategories] = useState<CategoryDto[]>([]);
 
     useEffect(() => {
-        CategoryService.getAll().then((data: CategoryDto[]) => {
+        CategoryService.getCategories().then((data: CategoryDto[]) => {
             setCategories(data);
         })
     }, []);
