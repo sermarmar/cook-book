@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 
 interface InputProps {
     type: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
+    label?: string;
     placeholder?: string;
     value?: string;
     disabled?: boolean;
@@ -11,9 +12,9 @@ interface InputProps {
 }
 
 const baseInputClass =
-    'px-3 py-2 border border-gray-300 rounded-8px shadow focus:outline-none bg-base-50 focus:ring-4 focus:ring-primary-300 hover:transition-all';
+    'w-full px-3 py-2 border border-gray-300 rounded-8px shadow focus:outline-none focus:ring-4 focus:ring-primary-300 hover:transition-all';
 
-export const Input: React.FC<InputProps> = ({ type, placeholder = '', value, disabled = false, className = '', onChange }) => {
+export const Input: React.FC<InputProps> = ({ type, label = '', placeholder = '', value, disabled = false, className = '', onChange }) => {
     const [internalValue, setInternalValue] = React.useState(value ?? '');
 
     useEffect(() => {
@@ -28,13 +29,16 @@ export const Input: React.FC<InputProps> = ({ type, placeholder = '', value, dis
     };
 
     return (
-        <input
-            type={ type }
-            placeholder={ placeholder }
-            value={ value !== undefined ? value : internalValue }
-            onChange={ handleChange }
-            disabled={ disabled }
-            className={ `${baseInputClass} ${className}` }
-        />
+        <div className="flex flex-col gap-2">
+            {label && <label className="block font-medium text-base-900">{label}</label>}
+            <input
+                type={ type }
+                placeholder={ placeholder }
+                value={ value !== undefined ? value : internalValue }
+                onChange={ handleChange }
+                disabled={ disabled }
+                className={ `${baseInputClass} ${className}` }
+            />
+        </div>
     );
 }

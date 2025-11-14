@@ -7,7 +7,7 @@ interface ComboSelectProps {
 }
 
 const baseInputClass =
-    'px-4 py-2 border border-gray-300 rounded-8px shadow focus:outline-none focus:ring-4 focus:ring-primary-300 hover:transition-all';
+    'w-full px-4 py-[11px] border border-gray-300 rounded-8px shadow focus:outline-none focus:ring-4 focus:ring-primary-300 hover:transition-all';
 
 export const ComboSelect: React.FC<ComboSelectProps> = ({ label = '', id, list, className/*, onSelect*/ }) => {
     

@@ -1,24 +1,25 @@
-import type { CategoryDto } from "../../infraestructure/dtos/CategoryDto";
 import { CategoryApi } from "../../infraestructure/api/CategoryApi";
 import type { Category } from "../models/Category";
 import { CategoryDtoFactory } from "../factory/CategoryDtoFactory";
+import type { CategoryDto } from "../../infraestructure/dtos/CategoryDto";
 
 export const CategoryService = {
     
-    async getCategories(): Promise<CategoryDto[]> {
+    async getCategories(): Promise<Category[]> {
         // eslint-disable-next-line no-useless-catch
         try {
-            if (localStorage.getItem('categories') === 'null') {
+            if (localStorage.getItem('categories') === null) {
                 const response = await CategoryApi.getAll();
                 const categories = response.data ?? [];
-                localStorage.setItem('categories', JSON.stringify(response.data));
-                return categories.map((category: Category) => {
+                categories.map((category: CategoryDto) => {
                     return CategoryDtoFactory.createFromObject(category);
                 });
+                localStorage.setItem('categories', JSON.stringify(categories));
+                return categories;
             } else {
                 const categories = localStorage.getItem('categories');
                 if (categories) {
-                    return JSON.parse(categories) as CategoryDto[];
+                    return JSON.parse(categories) as Category[];
                 }
             }
             return [];

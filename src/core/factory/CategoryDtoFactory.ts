@@ -3,10 +3,11 @@ import type { Category } from '../models/Category';
 
 
 export const CategoryDtoFactory = {
-    createFromObject(obj: Category): CategoryDto {
+    createFromObject(obj: CategoryDto): Category {
         return {
             id: obj.id,
             name: obj.name,
+            description: '',
             icon: obj.icon,
         };
     }

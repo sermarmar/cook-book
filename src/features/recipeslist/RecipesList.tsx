@@ -18,7 +18,7 @@ export const RecipesList: React.FC = () => {
     return (
         <div className="flex">
             <div className="flex gap-4 justify-center my-8 w-full">
-                <Input type="text" placeholder="Buscar una receta..." className="w-1/2" />
+                <Input type="text" placeholder="Buscar una receta..." />
                 <Button><i className="fa-solid fa-plus"></i> Crear receta</Button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
