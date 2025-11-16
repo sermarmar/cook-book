@@ -12,7 +12,7 @@ interface InputProps {
 }
 
 const baseInputClass =
-    'w-full px-3 py-2 border border-gray-300 rounded-8px shadow focus:outline-none focus:ring-4 focus:ring-primary-300 hover:transition-all';
+    'px-3 py-2 border border-gray-300 rounded-8px shadow focus:outline-none focus:ring-4 focus:ring-primary-300 hover:transition-all';
 
 export const Input: React.FC<InputProps> = ({ type, label = '', placeholder = '', value, disabled = false, className = '', onChange }) => {
     const [internalValue, setInternalValue] = React.useState(value ?? '');

@@ -1,9 +1,10 @@
 interface CardProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-export const Card: React.FC<CardProps> = ({ children }) => {
-    return <div className="p-4 pb-5 rounded-25px shadow-md bg-secondary-50 transition-all hover:shadow-xl">{ children }</div>;
+export const Card: React.FC<CardProps> = ({ children, className='' }) => {
+    return <div className={'p-4 pb-5 rounded-25px shadow-md bg-secondary-50 transition-all hover:shadow-xl ' + className }>{ children }</div>;
 }
 
 interface CardTitleProps {
@@ -19,7 +20,7 @@ interface CardDescriptionProps {
 }
 
 export const CardDecription: React.FC<CardDescriptionProps> = ({ children }) => {
-    return <p className="mx-4 text-base-900 text-left">{ children }</p>;
+    return <div className="mx-4 text-base-900 text-left">{ children }</div>;
 }
 
 interface CardImageProps {
