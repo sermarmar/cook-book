@@ -1,6 +1,6 @@
 import './App.css'
 import { Navbar } from './components/Navbar';
-import { RecipeForm } from './features/createRecipe/components/RecipeForm';
+import { RecipeForm } from "./features/createRecipe/components/RecipeForm";
 import { RecipesList } from './features/recipeslist/RecipesList';
 
 function App() {
